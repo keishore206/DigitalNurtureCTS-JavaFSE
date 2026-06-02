@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS for task practice -->
+    <style>
+        body {
+            background-color: #eaf6ff;
+        }
+
+        #welcomeBanner {
+            background-color: lightblue;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1 id="mainHeader">Local Community Event Portal</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#registration">Register</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#jsEvents">JS Events</a></li>
+            <li><a href="#bulletin">Bulletin</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#nearbyEvents">Nearby Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
+
+    <div id="welcomeBanner">
+        <h2 style="color: red;">Welcome Resident!</h2>
+        <p class="highlight">Stay updated with the latest community events.</p>
+        <p>
+            <span style="color: red; font-weight: bold;">
+                Special Offer: Free registration for first-time participants!
+            </span>
+        </p>
+    </div>
+
+    <!-- Main -->
+    <main>
+
+        <section id="home">
+            <h2 class="section-heading">Home</h2>
+            <p>Welcome to the Local Community Event Portal.</p>
+            <p>Residents can register for events, check locations, and access basic services.</p>
+        </section>
+
+        <section id="registration">
+            <h2 class="section-heading">Event Registration Form</h2>
+
+            <form id="eventForm" novalidate>
+
+                <label>Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus>
+                <span class="error" id="nameError"></span>
+                <br><br>
+
+                <label>Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <span class="error" id="emailError"></span>
+                <br><br>
+
+                <label>Phone Number:</label><br>
+                <input type="text" id="phone" name="phone" placeholder="Enter 10 digit phone number" required onblur="checkPhone()">
+                <br>
+                <span id="phoneError"></span>
+                <br><br>
+
+                <label>Event Date:</label><br>
+                <input type="date" id="date" name="date" required>
+                <br><br>
+
+                <label>Event Type:</label><br>
+                <select id="eventType" name="eventType" required onchange="showFee()">
+                    <option value="">Select Event</option>
+                    <option value="Music Festival" data-fee="100">Music Festival</option>
+                    <option value="Food Fair Event" data-fee="40">Food Fair Event</option>
+                    <option value="Community Sports Day" data-fee="50">Community Sports Day</option>
+                    <option value="Book Exhibition" data-fee="30">Book Exhibition</option>
+                    <option value="Medical Camp" data-fee="0">Medical Camp</option>
+                    <option value="Tree Planting" data-fee="0">Tree Planting</option>
+                </select>
+
+                <p id="eventFee"></p>
+
+                <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+                <br><br>
+
+                <label>Select JS Event:</label><br>
+                <select id="selectedEvent" name="selectedEvent" required>
+                    <option value="">Choose Event</option>
+                </select>
+                <span class="error" id="eventError"></span>
+                <br><br>
+
+                <label>Message:</label><br>
+                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                <br><br>
+
+                <button id="registerBtn" class="cta-button" type="submit" onclick="showRegisterMessage()">Register</button>
+                <button type="button" onclick="cancelRegistration()">Cancel Last Registration</button>
+                <br><br>
+
+                <output id="confirmation"></output>
+                <p id="postMessage"></p>
+
+            </form>
+        </section>
+
+        <section id="jsEvents">
+            <h2 class="section-heading">Upcoming Events Using JavaScript</h2>
+
+            <p>Search Event Name:</p>
+            <input type="text" id="searchBox" placeholder="Type event name">
+
+            <p>Filter By Category:</p>
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="Music">Music</option>
+                <option value="Food">Food</option>
+                <option value="Sports">Sports</option>
+                <option value="Education">Education</option>
+                <option value="Health">Health</option>
+                <option value="Environment">Environment</option>
+            </select>
+
+            <p id="loadingText">Loading events...</p>
+            <div id="eventList"></div>
+
+            <h3>Music Events Only</h3>
+            <ul id="musicList"></ul>
+
+            <h3>Formatted Event Names Using map()</h3>
+            <ul id="formattedList"></ul>
+
+            <h3>Object Entries Example</h3>
+            <div id="objectDetails"></div>
+
+            <p id="frameworkNote">
+                Framework Note: React or Vue can help when the page becomes big because they manage UI updates easily.
+            </p>
+        </section>
+
+        <section id="events">
+            <h2 class="section-heading">Events</h2>
+            <p class="highlight">All 6 community events are shown below.</p>
+            <p>Double-click any image to enlarge it.</p>
+
+            <table>
+                <caption>Community Event Gallery</caption>
+                <tr>
+                    <td>
+                        <img src="music.jpg" alt="Music Festival" title="Music Festival" class="event-image" ondblclick="enlargeImage(this)">
+                        <br>Music Festival
+                    </td>
+                    <td>
+                        <img src="food.webp" alt="Food Fair Event" title="Food Fair Event" class="event-image" ondblclick="enlargeImage(this)">
+                        <br>Food Fair Event
+                    </td>
+                    <td>
+                        <img src="sports.jpg" alt="Community Sports Day" title="Community Sports Day" class="event-image" ondblclick="enlargeImage(this)">
+                        <br>Community Sports Day
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book.jpg" alt="Book Exhibition" title="Book Exhibition" class="event-image" ondblclick="enlargeImage(this)">
+                        <br>Book Exhibition
+                    </td>
+                    <td>
+                        <img src="med.webp" alt="Medical Camp" title="Medical Camp" class="event-image" ondblclick="enlargeImage(this)">
+                        <br>Medical Camp
+                    </td>
+                    <td>
+                        <img src="tree.webp" alt="Tree Planting" title="Tree Planting" class="event-image" ondblclick="enlargeImage(this)">
+                        <br>Tree Planting
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="bulletin">
+            <h2 class="section-heading">Community Bulletin</h2>
+            <div class="newsArticle">
+                <p>
+                    The city council invites residents to join the latest community events. Families can enjoy music,
+                    food, sports, books, health services, and environment activities. This portal helps everyone check
+                    events and register easily from a browser.
+                </p>
+                <p>
+                    Please check the event dates and available seats before registering. Residents can also use the
+                    nearby events option to view their current location coordinates.
+                </p>
+            </div>
+        </section>
+
+        <section id="visibilityTest">
+            <h2 class="section-heading">Visibility Test</h2>
+            <p>This text is normal.</p>
+            <p class="hiddenExample">This text uses visibility hidden.</p>
+            <p class="noneExample">This text uses display none.</p>
+        </section>
+
+        <section id="videoInvite">
+            <h2 class="section-heading">Event Promo Video</h2>
+            <video width="400" controls oncanplay="videoReady()">
+                <source src="event-video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            <p id="videoMessage"></p>
+        </section>
+
+        <section id="feedback">
+            <h2 class="section-heading">Event Feedback</h2>
+            <label>Write your feedback:</label><br>
+            <textarea id="feedbackText" placeholder="Type your feedback here" onkeyup="countCharacters()"></textarea>
+            <p>Characters typed: <span id="charCount">0</span></p>
+        </section>
+
+        <section id="nearbyEvents">
+            <h2 class="section-heading">Nearby Events</h2>
+            <p>Click the button to find your current location.</p>
+            <button type="button" onclick="findNearbyEvents()">Find Nearby Events</button>
+            <p id="locationResult"></p>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-heading">Contact</h2>
+            <p>Email: communityportal@gmail.com</p>
+            <p>Phone: 9876543210</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Local Community Event Portal</p>
+    </footer>
+
+    <!-- jQuery added for task 14 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Main JavaScript file -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Music Festival",
+        "date": "2026-06-20",
+        "seats": 5,
+        "category": "Music",
+        "location": "Town Hall",
+        "fee": 100,
+        "image": "music.jpg"
+    },
+    {
+        "name": "Food Fair Event",
+        "date": "2026-06-22",
+        "seats": 6,
+        "category": "Food",
+        "location": "Old Street",
+        "fee": 40,
+        "image": "food.webp"
+    },
+    {
+        "name": "Community Sports Day",
+        "date": "2026-06-25",
+        "seats": 3,
+        "category": "Sports",
+        "location": "City Ground",
+        "fee": 50,
+        "image": "sports.jpg"
+    },
+    {
+        "name": "Book Exhibition",
+        "date": "2026-07-01",
+        "seats": 7,
+        "category": "Education",
+        "location": "Library Hall",
+        "fee": 30,
+        "image": "book.jpg"
+    },
+    {
+        "name": "Medical Camp",
+        "date": "2026-07-02",
+        "seats": 8,
+        "category": "Health",
+        "location": "Primary Health Center",
+        "fee": 0,
+        "image": "med.webp"
+    },
+    {
+        "name": "Tree Planting",
+        "date": "2026-07-15",
+        "seats": 4,
+        "category": "Environment",
+        "location": "Lake Park",
+        "fee": 0,
+        "image": "tree.webp"
+    }
+]

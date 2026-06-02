@@ -1,0 +1,381 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Reset styles using universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #eaf6ff;
+    background-image: url("city-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Header styles */
+nav {
+    background-color: rgba(0, 123, 255, 0.8);
+    padding: 15px;
+}
+
+/* ID selector for main header */
+#mainHeader {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Navigation list styles */
+nav ul {
+    list-style-type: none;
+    list-style-position: inside;
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 8px;
+    margin: 5px;
+}
+
+/* Link styles */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #f0f0f0;
+}
+
+a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+}
+
+/* Welcome banner styles */
+#welcomeBanner {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #007BFF;
+}
+
+/* Highlight class */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* Element selector for all h2 */
+h2 {
+    color: #004080;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Grouping selector */
+h3,
+p {
+    margin-bottom: 10px;
+}
+
+/* Section heading gradient */
+.section-heading {
+    background: linear-gradient(to right, #007BFF, #00c6ff);
+    color: white;
+    padding: 8px;
+}
+
+/* Main section styles */
+section {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Description text styles */
+section p {
+    text-align: justify;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.7;
+    letter-spacing: 1px;
+}
+
+/* Event card box model */
+.eventCard {
+    border: 2px solid #007BFF;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+}
+
+/* JavaScript event card style */
+.js-event-card {
+    border: 2px solid #007BFF;
+    background-color: #ffffff;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.js-event-card h3 {
+    color: #004080;
+}
+
+.js-event-card button {
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+/* Image styles */
+.event-image {
+    border: 2px solid black;
+    width: 150px;
+    height: 100px;
+}
+
+.small-card-image {
+    width: 120px;
+    height: 80px;
+    border: 1px solid black;
+    margin-bottom: 8px;
+}
+
+.big-image {
+    width: 250px;
+    height: 180px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+caption {
+    font-weight: bold;
+    padding: 10px;
+}
+
+th,
+td {
+    border: 1px solid #333333;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #dff0ff;
+}
+
+/* Registration form styles */
+#registration {
+    margin-top: 20px;
+}
+
+form {
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+    border: 2px solid gray;
+    background-color: #f2f2f2;
+}
+
+/* Form input styles */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Outline selected form fields */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid orange;
+}
+
+/* Button styles */
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    margin-top: 5px;
+}
+
+/* Style for main CTA button */
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Output and message styles */
+#confirmation {
+    color: green;
+    font-weight: bold;
+}
+
+#phoneError,
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#eventFee {
+    color: blue;
+    font-weight: bold;
+}
+
+#loadingText {
+    color: purple;
+    font-weight: bold;
+}
+
+#postMessage {
+    color: blue;
+    font-weight: bold;
+}
+
+#frameworkNote {
+    background-color: #fff8c6;
+    padding: 10px;
+    border: 1px solid orange;
+}
+
+/* Feedback styles */
+#feedback {
+    margin-top: 20px;
+}
+
+#feedbackText {
+    width: 100%;
+    height: 100px;
+}
+
+/* Video section styles */
+#videoMessage {
+    color: green;
+    font-weight: bold;
+}
+
+video {
+    max-width: 100%;
+}
+
+/* Nearby events styles */
+#nearbyEvents {
+    margin-top: 20px;
+}
+
+#locationResult {
+    color: green;
+    font-weight: bold;
+}
+
+/* Multiple column news article */
+.newsArticle {
+    column-count: 2;
+    column-gap: 20px;
+    column-rule: 1px solid gray;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.newsArticle p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin: 0 0 10px 0;
+}
+
+/* Visibility comparison */
+.hiddenExample {
+    visibility: hidden;
+}
+
+.noneExample {
+    display: none;
+}
+
+/* Footer styles */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive design for mobile screens */
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    nav li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    #mainHeader {
+        font-size: 22px;
+    }
+
+    section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .event-image {
+        width: 100px;
+        height: 70px;
+    }
+
+    .big-image {
+        width: 180px;
+        height: 130px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    video {
+        width: 90vw;
+    }
+
+    .newsArticle {
+        column-count: 1;
+    }
+
+    form {
+        width: 95%;
+    }
+}
